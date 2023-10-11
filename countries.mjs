@@ -1,4 +1,4 @@
-import {arrayOfCountries} from './countryList.mjs';
+import { arrayOfCountries } from './countryList.mjs';
 
 function sortArray(type) {
     let sortedCountries = [...arrayOfCountries];
@@ -7,7 +7,6 @@ function sortArray(type) {
         return;
     }
     type = type.toUpperCase();
-
     if (type == "A") {
         sortedCountries.sort();
     } else if (type == "D") {
@@ -22,9 +21,8 @@ function searchForCountry(countryName) {
     if (typeof countryName !== 'string') {
         return;
     }
-    countryName = countryName.toLowerCase();
 
-    return arrayOfCountries.find((country) => country.toLowerCase() == countryName);   
+    return arrayOfCountries.find((country) => country.toLowerCase() == countryName.toLowerCase());   
 }
 
 function addAtFirst(country) {
@@ -87,7 +85,7 @@ function arrayToChunks(chunkSize) {
     }
     return chunks;
 }
-function concatChunks(...arrays) {
+function concatArrays(...arrays) {
    let concatArray = [];
    for (const arr of arrays) {
        concatArray = concatArray.concat(arr)
