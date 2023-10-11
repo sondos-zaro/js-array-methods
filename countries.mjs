@@ -6,7 +6,9 @@ function sortArray(type) {
     if (sortedCountries.length <= 0 || typeof type !== 'string') {
         return;
     }
+
     type = type.toUpperCase();
+
     if (type == "A") {
         sortedCountries.sort();
     } else if (type == "D") {
@@ -51,6 +53,7 @@ function removeCountry(countryName) {
 
 function indexOfCountry(countryName) {
     const loweCaseArray = arrayOfCountries.map((country) => country.toLowerCase());
+
     return loweCaseArray.indexOf(countryName.toLowerCase());
 }
 
@@ -68,6 +71,7 @@ function ifExist(countryName) {
         return;
     }
     const loweCaseArray = arrayOfCountries.map((country) => country.toLowerCase());
+
     return loweCaseArray.includes(countryName.toLowerCase());
 }
 
@@ -83,6 +87,7 @@ function arrayToChunks(chunkSize) {
         chunk = arrayOfCountries.slice(i, i + chunkSize);
         chunks.push(chunk);
     }
+    
     return chunks;
 }
 function concatArrays(...arrays) {
