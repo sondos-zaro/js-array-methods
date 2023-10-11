@@ -3,7 +3,7 @@ import { arrayOfCountries } from './countryList.mjs';
 function sortArray(type) {
     let sortedCountries = [...arrayOfCountries];
 
-    if (sortedCountries.length <= 0 || typeof type !== 'string') {
+    if (typeof type !== 'string') {
         return;
     }
 
@@ -52,9 +52,9 @@ function removeCountry(countryName) {
 }
 
 function indexOfCountry(countryName) {
-    const loweCaseArray = arrayOfCountries.map((country) => country.toLowerCase());
+    const lowerCaseArray = arrayOfCountries.map((country) => country.toLowerCase());
 
-    return loweCaseArray.indexOf(countryName.toLowerCase());
+    return lowerCaseArray.indexOf(countryName.toLowerCase());
 }
 
 function searchForCountries(countryName) {
@@ -87,7 +87,7 @@ function arrayToChunks(chunkSize) {
         chunk = arrayOfCountries.slice(i, i + chunkSize);
         chunks.push(chunk);
     }
-    
+
     return chunks;
 }
 function concatArrays(...arrays) {
@@ -101,3 +101,4 @@ function concatArrays(...arrays) {
 
 
 
+ 
