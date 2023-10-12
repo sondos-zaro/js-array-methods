@@ -1,21 +1,27 @@
 import { arrayOfCountries } from './countryList.mjs';
 
 function sortArray(type) {
-    let sortedCountries = [...arrayOfCountries];
+    let sortedCountries ;
+    let name1;
+    let name2;
 
     if (typeof type !== 'string') {
         return;
     }
 
     type = type.toUpperCase();
+    sortedCountries = arrayOfCountries.sort((object1, object2) => {
+        name1 = object1.name.toUpperCase();
+        name2 = object2.name.toUpperCase();
 
-    if (type == "A") {
-        sortedCountries.sort();
-    } else if (type == "D") {
-        sortedCountries.sort();
-        sortedCountries.reverse();
-    }
-
+        if (type == "D") {
+            return (name1 < name2) ? 1 : (name1 > name2) ? -1 : 0;    
+        } else {
+            return (name1 > name2) ? 1 : (name1 < name2) ? -1 : 0; 
+        }
+        
+    })
+    
     return sortedCountries;
 }
 
@@ -101,4 +107,4 @@ function concatArrays(...arrays) {
 
 
 
- 
+console.log(sortArray("D"));
