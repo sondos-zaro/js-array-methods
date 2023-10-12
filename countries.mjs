@@ -151,7 +151,7 @@ function concatArrays(...arrays) {
 }
 
 // Update specific country
-function editCountry(countryName, newCountry) {
+function updateCountry(countryName, newCountry) {
     let index = indexOfCountry(countryName);
 
     if (index == -1) {
@@ -207,4 +207,21 @@ function deleteCity(cityName) {
         } else {
             return "this city doesn't exist";
         }    
+}
+
+// Update city 
+function updatecity(cityName, newCity) {
+    let indexOfCity;
+    let indexOfCountry =arrayOfCountries.findIndex( (country) => {
+        return country.cities.map(city => city.name.toLowerCase()).includes(cityName.toLowerCase());
+        });
+    
+        if (indexOfCountry !== -1) {
+            indexOfCity = arrayOfCountries[indexOfCountry].cities.findIndex( (city) => {
+                return city.name.toLowerCase() === cityName.toLowerCase();
+            });
+            arrayOfCountries[indexOfCountry].cities[indexOfCity]=newCity;
+        } else {
+            return "this city doesn't exist";
+        }     
 }
