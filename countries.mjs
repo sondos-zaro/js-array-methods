@@ -107,6 +107,10 @@ function searchForCountry(countryName) {
 
 
 function indexOfCountry(countryName) {
+    if (typeof countryName !== 'string') {
+        return;
+    }
+
     return arrayOfCountries.findIndex( (country) => country.name.toLowerCase() === countryName.toLowerCase());
 }
 
@@ -144,9 +148,21 @@ function concatArrays(...arrays) {
 
 function editCountry(countryName, newCountry) {
     let index = indexOfCountry(countryName);
+
     if (index == -1) {
         return "this country doesn't exist";
     } else {
         arrayOfCountries[index]=newCountry;
     }
 }
+
+function getCountryCities(countryName) {
+    let index = indexOfCountry(countryName);
+
+    if (index == -1) {
+        return "this country doesn't exist";
+    } else {
+        return arrayOfCountries[index].cities;
+    }
+}
+
