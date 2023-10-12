@@ -168,14 +168,14 @@ function getCountryCities(countryName) {
     if (index == -1) {
         return "this country doesn't exist";
     } else {
-        return arrayOfCountries[index].cities;
+        return arrayOfCountries[index].cities.map(city => city.name);
     }
 }
 
 // Get country for specific city
 function getCountryForCity(cityName) {
     let index =arrayOfCountries.findIndex( (country) => {
-    return country.cities.includes(cityName)
+    return country.cities.map(city => city.name.toLowerCase()).includes(cityName.toLowerCase());
     });
 
     if (index !== -1) {
@@ -196,14 +196,13 @@ function addCity(countryName, cityName) {
 function deleteCity(cityName) {
     let indexOfCity;
     let indexOfCountry =arrayOfCountries.findIndex( (country) => {
-        return country.cities.includes(cityName);
+        return country.cities.map(city => city.name.toLowerCase()).includes(cityName.toLowerCase());
         });
     
         if (indexOfCountry !== -1) {
             indexOfCity = arrayOfCountries[indexOfCountry].cities.findIndex( (city) => {
-            return city.includes(cityName) ;
+                return city.name.toLowerCase() === cityName.toLowerCase();
             });
-
             arrayOfCountries[indexOfCountry].cities.splice(indexOfCity,1);
         } else {
             return "this city doesn't exist";
