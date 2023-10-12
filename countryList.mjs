@@ -1,556 +1,610 @@
 export let arrayOfCountries = [
-    {
-      id: 1,
-      name: "United States",
-      population: 331002651,
-      cities: ["New York", "Los Angeles", "Chicago"],
-    },
-    {
-      id: 2,
-      name: "China",
-      population: 1444216107,
-      cities: ["Beijing", "Shanghai", "Guangzhou"],
-    },
-    {
-      id: 3,
-      name: "India",
-      population: 1380004385,
-      cities: ["Mumbai", "Delhi", "Bangalore"],
-    },
-    {
-      id: 4,
-      name: "Brazil",
-      population: 212559417,
-      cities: ["Sao Paulo", "Rio de Janeiro", "Brasilia"],
-    },
-    {
-      id: 5,
-      name: "United Kingdom",
-      population: 67886011,
-      cities: ["London", "Manchester", "Birmingham"],
-    },
-    {
-      id: 6,
-      name: "Canada",
-      population: 37742154,
-      cities: ["Toronto", "Vancouver", "Montreal"],
-    },
-    {
-      id: 7,
-      name: "Australia",
-      population: 25499884,
-      cities: ["Sydney", "Melbourne", "Brisbane"],
-    },
-    {
-      id: 8,
-      name: "Japan",
-      population: 126476461,
-      cities: ["Tokyo", "Osaka", "Kyoto"],
-    },
-    {
-      id: 9,
-      name: "Germany",
-      population: 83783942,
-      cities: ["Berlin", "Munich", "Hamburg"],
-    },
-    {
-      id: 10,
-      name: "South Africa",
-      population: 59308690,
-      cities: ["Johannesburg", "Cape Town", "Pretoria"],
-    },
-    {
-      id: 11,
-      name: "France",
-      population: 65273511,
-      cities: ["Paris", "Marseille", "Lyon"],
-    },
-    {
-      id: 12,
-      name: "Mexico",
-      population: 128932753,
-      cities: ["Mexico City", "Guadalajara", "Monterrey"],
-    },
-    {
-      id: 13,
-      name: "Spain",
-      population: 46754778,
-      cities: ["Madrid", "Barcelona", "Valencia"],
-    },
-    {
-      id: 14,
-      name: "Russia",
-      population: 145912025,
-      cities: ["Moscow", "Saint Petersburg", "Novosibirsk"],
-    },
-    {
-      id: 15,
-      name: "Nigeria",
-      population: 206139587,
-      cities: ["Lagos", "Kano", "Ibadan"],
-    },
-    {
-      id: 16,
-      name: "Italy",
-      population: 60461826,
-      cities: ["Rome", "Milan", "Naples"],
-    },
-    {
-      id: 17,
-      name: "Argentina",
-      population: 45195777,
-      cities: ["Buenos Aires", "Cordoba", "Rosario"],
-    },
-    {
-      id: 18,
-      name: "Egypt",
-      population: 102334404,
-      cities: ["Cairo", "Alexandria", "Giza"],
-    },
-    {
-      id: 19,
-      name: "Saudi Arabia",
-      population: 34813871,
-      cities: ["Riyadh", "Jeddah", "Mecca"],
-    },
-    {
-      id: 20,
-      name: "Thailand",
-      population: 69799978,
-      cities: ["Bangkok", "Chiang Mai", "Phuket"],
-    },
-    {
-      id: 21,
-      name: "Indonesia",
-      population: 273523615,
-      cities: ["Jakarta", "Surabaya", "Bandung"],
-    },
-    {
-      id: 22,
-      name: "Turkey",
-      population: 84339067,
-      cities: ["Istanbul", "Ankara", "Izmir"],
-    },
-    {
-      id: 23,
-      name: "South Korea",
-      population: 51269185,
-      cities: ["Seoul", "Busan", "Incheon"],
-    },
-    {
-      id: 24,
-      name: "Czech Republic",
-      population: 10708981,
-      cities: ["Prague", "Brno", "Ostrava"],
-    },
-    {
-      id: 25,
-      name: "Greece",
-      population: 10423054,
-      cities: ["Athens", "Thessaloniki", "Patras"],
-    },
-    {
-      id: 26,
-      name: "Canada",
-      population: 37742154,
-      cities: ["Toronto", "Vancouver", "Montreal"],
-    },
-    {
-      id: 27,
-      name: "New Zealand",
-      population: 4822233,
-      cities: ["Auckland", "Wellington", "Christchurch"],
-    },
-    {
-      id: 28,
-      name: "Peru",
-      population: 32971854,
-      cities: ["Lima", "Arequipa", "Trujillo"],
-    },
-    {
-      id: 29,
-      name: "Kenya",
-      population: 53771296,
-      cities: ["Nairobi", "Mombasa", "Kisumu"],
-    },
-    {
-      id: 30,
-      name: "Sweden",
-      population: 10099265,
-      cities: ["Stockholm", "Gothenburg", "Malmö"],
-    },
-    {
-      id: 31,
-      name: "Ireland",
-      population: 4937786,
-      cities: ["Dublin", "Cork", "Galway"],
-    },
-    {
-      id: 32,
-      name: "Netherlands",
-      population: 17134872,
-      cities: ["Amsterdam", "Rotterdam", "The Hague"],
-    },
-    {
-      id: 33,
-      name: "Belgium",
-      population: 11589623,
-      cities: ["Brussels", "Antwerp", "Ghent"],
-    },
-    {
-      id: 34,
-      name: "Poland",
-      population: 37846611,
-      cities: ["Warsaw", "Krakow", "Wroclaw"],
-    },
-    {
-      id: 35,
-      name: "Switzerland",
-      population: 8654622,
-      cities: ["Zurich", "Geneva", "Bern"],
-    },
-    {
-      id: 36,
-      name: "Austria",
-      population: 9006398,
-      cities: ["Vienna", "Graz", "Linz"],
-    },
-    {
-      id: 37,
-      name: "Portugal",
-      population: 10196709,
-      cities: ["Lisbon", "Porto", "Vila Nova de Gaia"],
-    },
-    {
-        id: 70,
-        name: "Tajikistan",
-        population: 9537640,
-        cities: ["Dushanbe", "Khujand", "Qurghonteppa"],
-    },
-    {
-        id: 39,
-        name: "Denmark",
-        population: 5792202,
-        cities: ["Copenhagen", "Aarhus", "Odense"],
+  {
+    "id": 1,
+    "name": "United States",
+    "population": 331002651,
+    "cities": [
+      {
+        "name": "New York",
+        "latitude": 40.7128,
+        "longitude": -74.0060
       },
       {
-        id: 40,
-        name: "Norway",
-        population: 5421241,
-        cities: ["Oslo", "Bergen", "Trondheim"],
+        "name": "Los Angeles",
+        "latitude": 34.0522,
+        "longitude": -118.2437
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Canada",
+    "population": 37742154,
+    "cities": [
+      {
+        "name": "Toronto",
+        "latitude": 43.651070,
+        "longitude": -79.347015
       },
       {
-        id: 41,
-        name: "Finland",
-        population: 5540720,
-        cities: ["Helsinki", "Tampere", "Turku"],
+        "name": "Vancouver",
+        "latitude": 49.2827,
+        "longitude": -123.1207
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "India",
+    "population": 1380004385,
+    "cities": [
+      {
+        "name": "Mumbai",
+        "latitude": 19.0760,
+        "longitude": 72.8777
       },
       {
-        id: 42,
-        name: "Singapore",
-        population: 5850342,
-        cities: ["Singapore City"],
+        "name": "Delhi",
+        "latitude": 28.6139,
+        "longitude": 77.2090
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "United Kingdom",
+    "population": 67886011,
+    "cities": [
+      {
+        "name": "London",
+        "latitude": 51.5074,
+        "longitude": -0.1278
       },
       {
-        id: 43,
-        name: "Malaysia",
-        population: 32365999,
-        cities: ["Kuala Lumpur", "George Town", "Ipoh"],
+        "name": "Manchester",
+        "latitude": 53.483959,
+        "longitude": -2.244644
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Australia",
+    "population": 25788216,
+    "cities": [
+      {
+        "name": "Sydney",
+        "latitude": -33.8688,
+        "longitude": 151.2093
       },
       {
-        id: 44,
-        name: "Vietnam",
-        population: 97338579,
-        cities: ["Ho Chi Minh City", "Hanoi", "Da Nang"],
+        "name": "Melbourne",
+        "latitude": -37.8136,
+        "longitude": 144.9631
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "France",
+    "population": 65273511,
+    "cities": [
+      {
+        "name": "Paris",
+        "latitude": 48.8566,
+        "longitude": 2.3522
       },
       {
-        id: 45,
-        name: "South Africa",
-        population: 59308690,
-        cities: ["Johannesburg", "Cape Town", "Pretoria"],
+        "name": "Marseille",
+        "latitude": 43.2962,
+        "longitude": 5.3692
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Brazil",
+    "population": 212559417,
+    "cities": [
+      {
+        "name": "Sao Paulo",
+        "latitude": -23.5505,
+        "longitude": -46.6333
       },
       {
-        id: 46,
-        name: "Morocco",
-        population: 36910560,
-        cities: ["Casablanca", "Rabat", "Fes"],
+        "name": "Rio de Janeiro",
+        "latitude": -22.9068,
+        "longitude": -43.1729
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "China",
+    "population": 1439323776,
+    "cities": [
+      {
+        "name": "Beijing",
+        "latitude": 39.9042,
+        "longitude": 116.4074
       },
       {
-        id: 47,
-        name: "Chile",
-        population: 19116201,
-        cities: ["Santiago", "Valparaíso", "Concepción"],
+        "name": "Shanghai",
+        "latitude": 31.2304,
+        "longitude": 121.4737
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Russia",
+    "population": 145912025,
+    "cities": [
+      {
+        "name": "Moscow",
+        "latitude": 55.7558,
+        "longitude": 37.6176
       },
       {
-        id: 48,
-        name: "Colombia",
-        population: 50882891,
-        cities: ["Bogotá", "Medellín", "Cali"],
+        "name": "Saint Petersburg",
+        "latitude": 59.9343,
+        "longitude": 30.3351
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Japan",
+    "population": 126476461,
+    "cities": [
+      {
+        "name": "Tokyo",
+        "latitude": 35.682839,
+        "longitude": 139.759455
       },
       {
-        id: 49,
-        name: "Venezuela",
-        population: 28435940,
-        cities: ["Caracas", "Maracaibo", "Valencia"],
+        "name": "Osaka",
+        "latitude": 34.693738,
+        "longitude": 135.502165
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "South Africa",
+    "population": 59308690,
+    "cities": [
+      {
+        "name": "Johannesburg",
+        "latitude": -26.204103,
+        "longitude": 28.047305
       },
       {
-        id: 50,
-        name: "Ukraine",
-        population: 44385155,
-        cities: ["Kyiv", "Kharkiv", "Odesa"],
+        "name": "Cape Town",
+        "latitude": -33.924870,
+        "longitude": 18.424055
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Mexico",
+    "population": 128932753,
+    "cities": [
+      {
+        "name": "Mexico City",
+        "latitude": 19.432608,
+        "longitude": -99.133209
       },
       {
-        id: 51,
-        name: "Romania",
-        population: 19237691,
-        cities: ["Bucharest", "Cluj-Napoca", "Timișoara"],
+        "name": "Guadalajara",
+        "latitude": 20.659698,
+        "longitude": -103.349609
+      }
+    ]
+  },{
+    "id": 13,
+    "name": "Germany",
+    "population": 83783942,
+    "cities": [
+      {
+        "name": "Berlin",
+        "latitude": 52.520008,
+        "longitude": 13.404954
       },
       {
-        id: 52,
-        name: "Ghana",
-        population: 31072940,
-        cities: ["Accra", "Kumasi", "Tamale"],
+        "name": "Munich",
+        "latitude": 48.135125,
+        "longitude": 11.581981
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Italy",
+    "population": 60461826,
+    "cities": [
+      {
+        "name": "Rome",
+        "latitude": 41.902782,
+        "longitude": 12.496366
       },
       {
-        id: 53,
-        name: "Ethiopia",
-        population: 114963588,
-        cities: ["Addis Ababa", "Dire Dawa", "Mek'ele"],
+        "name": "Milan",
+        "latitude": 45.464203,
+        "longitude": 9.189982
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Spain",
+    "population": 46754778,
+    "cities": [
+      {
+        "name": "Madrid",
+        "latitude": 40.416775,
+        "longitude": -3.703790
       },
       {
-        id: 54,
-        name: "Kenya",
-        population: 53771296,
-        cities: ["Nairobi", "Mombasa", "Kisumu"],
+        "name": "Barcelona",
+        "latitude": 41.385063,
+        "longitude": 2.173404
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Argentina",
+    "population": 45195777,
+    "cities": [
+      {
+        "name": "Buenos Aires",
+        "latitude": -34.611765,
+        "longitude": -58.417322
       },
       {
-        id: 55,
-        name: "New Zealand",
-        population: 4822233,
-        cities: ["Auckland", "Wellington", "Christchurch"],
+        "name": "Cordoba",
+        "latitude": -31.420083,
+        "longitude": -64.188776
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Egypt",
+    "population": 102334404,
+    "cities": [
+      {
+        "name": "Cairo",
+        "latitude": 30.044420,
+        "longitude": 31.235712
       },
       {
-        id: 56,
-        name: "Philippines",
-        population: 113253240,
-        cities: ["Manila", "Cebu City", "Davao City"],
+        "name": "Alexandria",
+        "latitude": 31.215645,
+        "longitude": 29.955266
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Greece",
+    "population": 10423054,
+    "cities": [
+      {
+        "name": "Athens",
+        "latitude": 37.9838,
+        "longitude": 23.7275
       },
       {
-        id: 57,
-        name: "Maldives",
-        population: 521000,
-        cities: ["Male"],
+        "name": "Thessaloniki",
+        "latitude": 40.6401,
+        "longitude": 22.9444
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Thailand",
+    "population": 69428524,
+    "cities": [
+      {
+        "name": "Bangkok",
+        "latitude": 13.7563,
+        "longitude": 100.5018
       },
       {
-        id: 58,
-        name: "Austria",
-        population: 9006398,
-        cities: ["Vienna", "Graz", "Linz"],
+        "name": "Chiang Mai",
+        "latitude": 18.7883,
+        "longitude": 98.9853
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Kenya",
+    "population": 53771296,
+    "cities": [
+      {
+        "name": "Nairobi",
+        "latitude": -1.2921,
+        "longitude": 36.8219
       },
       {
-        id: 59,
-        name: "Croatia",
-        population: 4105267,
-        cities: ["Zagreb", "Split", "Rijeka"],
+        "name": "Mombasa",
+        "latitude": -4.0435,
+        "longitude": 39.6682
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "name": "South Korea",
+    "population": 51780579,
+    "cities": [
+      {
+        "name": "Seoul",
+        "latitude": 37.5665,
+        "longitude": 126.9780
       },
       {
-        id: 60,
-        name: "Cuba",
-        population: 11326616,
-        cities: ["Havana", "Santiago de Cuba", "Camagüey"],
+        "name": "Busan",
+        "latitude": 35.1796,
+        "longitude": 129.0756
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Nigeria",
+    "population": 206139587,
+    "cities": [
+      {
+        "name": "Lagos",
+        "latitude": 6.5244,
+        "longitude": 3.3792
       },
       {
-        id: 61,
-        name: "Dominican Republic",
-        population: 10847910,
-        cities: ["Santo Domingo", "Santiago", "La Romana"],
+        "name": "Abuja",
+        "latitude": 9.0579,
+        "longitude": 7.4951
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Saudi Arabia",
+    "population": 34813871,
+    "cities": [
+      {
+        "name": "Riyadh",
+        "latitude": 24.7136,
+        "longitude": 46.6753
       },
       {
-        id: 62,
-        name: "Ecuador",
-        population: 17643054,
-        cities: ["Quito", "Guayaquil", "Cuenca"],
+        "name": "Jeddah",
+        "latitude": 21.4858,
+        "longitude": 39.1925
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "name": "Turkey",
+    "population": 84339067,
+    "cities": [
+      {
+        "name": "Istanbul",
+        "latitude": 41.0082,
+        "longitude": 28.9784
       },
       {
-        id: 63,
-        name: "Iceland",
-        population: 356991,
-        cities: ["Reykjavik", "Kopavogur", "Hafnarfjordur"],
+        "name": "Ankara",
+        "latitude": 39.9334,
+        "longitude": 32.8597
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "name": "Indonesia",
+    "population": 273523615,
+    "cities": [
+      {
+        "name": "Jakarta",
+        "latitude": -6.2088,
+        "longitude": 106.8456
       },
       {
-        id: 64,
-        name: "Jamaica",
-        population: 2961161,
-        cities: ["Kingston", "Spanish Town", "Montego Bay"],
+        "name": "Surabaya",
+        "latitude": -7.2575,
+        "longitude": 112.7521
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "name": "Canada",
+    "population": 37742154,
+    "cities": [
+      {
+        "name": "Toronto",
+        "latitude": 43.651070,
+        "longitude": -79.347015
       },
       {
-        id: 65,
-        name: "Kuwait",
-        population: 4270571,
-        cities: ["Kuwait City", "Hawalli", "Salmiya"],
+        "name": "Vancouver",
+        "latitude": 49.2827,
+        "longitude": -123.1207
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "name": "New Zealand",
+    "population": 4822233,
+    "cities": [
+      {
+        "name": "Auckland",
+        "latitude": -36.8485,
+        "longitude": 174.7633
       },
       {
-        id: 66,
-        name: "Lebanon",
-        population: 6825442,
-        cities: ["Beirut", "Tripoli", "Sidon"],
+        "name": "Wellington",
+        "latitude": -41.2865,
+        "longitude": 174.7762
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "name": "Chile",
+    "population": 19116201,
+    "cities": [
+      {
+        "name": "Santiago",
+        "latitude": -33.4489,
+        "longitude": -70.6693
       },
       {
-        id: 67,
-        name: "Luxembourg",
-        population: 625978,
-        cities: ["Luxembourg City", "Esch-sur-Alzette", "Differdange"],
+        "name": "Valparaiso",
+        "latitude": -33.0472,
+        "longitude": -71.6127
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "name": "Netherlands",
+    "population": 17134872,
+    "cities": [
+      {
+        "name": "Amsterdam",
+        "latitude": 52.3676,
+        "longitude": 4.9041
       },
       {
-        id: 68,
-        name: "Nepal",
-        population: 29136808,
-        cities: ["Kathmandu", "Pokhara", "Patan"],
+        "name": "Rotterdam",
+        "latitude": 51.9225,
+        "longitude": 4.47917
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "name": "Singapore",
+    "population": 5850342,
+    "cities": [
+      {
+        "name": "Singapore",
+        "latitude": 1.3521,
+        "longitude": 103.8198
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "name": "Sweden",
+    "population": 10230096,
+    "cities": [
+      {
+        "name": "Stockholm",
+        "latitude": 59.3293,
+        "longitude": 18.0686
       },
       {
-        id: 69,
-        name: "Oman",
-        population: 5106626,
-        cities: ["Muscat", "Seeb", "Salalah"],
-       },
-       {
-        id: 70,
-        name: "Panama",
-        population: 4314767,
-        cities: ["Panama City", "San Miguelito", "Tocumen"],
-       },
-       {
-        id: 71,
-        name: "Qatar",
-        population: 2881053,
-        cities: ["Doha", "Al Rayyan", "Umm Salal Muhammad"],
-        },
-        {
-        id: 72,
-        name: "Rwanda",
-        population: 12952218,
-        cities: ["Kigali", "Butare", "Gitarama"],
-        },     
-        {
-        id: 73,
-        name: "Sri Lanka",
-        population: 21413250,
-        cities: ["Colombo", "Dehiwala-Mount Lavinia", "Moratuwa"],
-        },  
-        {
-        id: 74,
-        name: "Tanzania",
-        population: 59734218,
-        cities: ["Dodoma", "Dar es Salaam", "Mwanza"],
-        },   
-        {
-        id: 75,
-        name: "Uganda",
-        population: 45741007,
-        cities: ["Kampala", "Gulu", "Lira"],
-        },
-        {
-        id: 76,
-        name: "Zimbabwe",
-        population: 14862924,
-        cities: ["Harare", "Bulawayo", "Chitungwiza"],
-        },
-        {
-        id: 77,
-        name: "Algeria",
-        population: 43851044,
-        cities: ["Algiers", "Oran", "Constantine"],
-         },
-        {
-        id: 79,
-        name: "Tunisia",
-        population: 11818619,
-        cities: ["Tunis", "Sfax", "Sousse"],
-        },
-        {
-        id: 80,
-        name: "Libya",
-        population: 6871292,
-        cities: ["Tripoli", "Benghazi", "Misrata"],
-        },
-        {
-        id: 81,
-        name: "Greece",
-        population: 10423054,
-        cities: ["Athens", "Thessaloniki", "Patras"],
-        },
-        {
-        id: 82,
-        name: "Israel",
-        population: 8655535,
-        cities: ["Jerusalem", "Tel Aviv", "Haifa"],
-        },
-        {
-        id: 83,
-        name: "Palestine",
-        population: 5101414,
-        cities: ["Gaza City", "Ramallah", "Hebron"],
-        },
-        {
-        id: 84,
-        name: "Jordan",
-        population: 10203134,
-        cities: ["Amman", "Zarqa", "Irbid"],
-        },
-        {
-        id: 85,
-        name: "Bahrain",
-        population: 1701583,
-        cities: ["Manama", "Riffa", "Muharraq"],
-        },
-        {
-        id: 86,
-        name: "United Arab Emirates",
-        population: 9890402,
-        cities: ["Dubai", "Abu Dhabi", "Sharjah"],
-        },
-        {
-        id: 87,
-        name: "Kazakhstan",
-        population: 187,
-        cities:[]
-        },
-        {
-            id: 88,
-            name: "Equatorial Guinea",
-            population: 1402985,
-            cities: ["Malabo", "Bata", "Ebebiyin"],
-          },
-          {
-            id: 89,
-            name: "Sao Tome and Principe",
-            population: 219159,
-            cities: ["Sao Tome"],
-          },
-          {
-            id: 90,
-            name: "Western Sahara",
-            population: 597339,
-            cities: ["Laayoune"],
-          },
-          {
-            id: 91,
-            name: "Mauritius",
-            population: 1271768,
-            cities: ["Port Louis", "Beau Bassin-Rose Hill", "Vacoas-Phoenix"],
-          },
-          {
-            id: 92,
-            name: "Seychelles",
-            population: 98347,
-            cities: ["Victoria", "Anse Boileau", "Beau Vallon"],
-          },
-          {
-            id: 93,
-            name: "Comoros",
-            population: 869601,
-            cities: ["Moroni", "Mutsamudu", "Fomboni"],
-          }
-    ];
-    
-    
+        "name": "Gothenburg",
+        "latitude": 57.7089,
+        "longitude": 11.9746
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "name": "South Africa",
+    "population": 59308690,
+    "cities": [
+      {
+        "name": "Cape Town",
+        "latitude": -33.9249,
+        "longitude": 18.4241
+      },
+      {
+        "name": "Johannesburg",
+        "latitude": -26.2041,
+        "longitude": 28.0473
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "name": "Ireland",
+    "population": 4937786,
+    "cities": [
+      {
+        "name": "Dublin",
+        "latitude": 53.349805,
+        "longitude": -6.26031
+      },
+      {
+        "name": "Cork",
+        "latitude": 51.897975,
+        "longitude": -8.470610
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "name": "Switzerland",
+    "population": 8654618,
+    "cities": [
+      {
+        "name": "Zurich",
+        "latitude": 47.3769,
+        "longitude": 8.5417
+      },
+      {
+        "name": "Geneva",
+        "latitude": 46.2044,
+        "longitude": 6.1432
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "name": "Norway",
+    "population": 5421241,
+    "cities": [
+      {
+        "name": "Oslo",
+        "latitude": 59.9139,
+        "longitude": 10.7522
+      },
+      {
+        "name": "Bergen",
+        "latitude": 60.3913,
+        "longitude": 5.3221
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "name": "Portugal",
+    "population": 10196709,
+    "cities": [
+      {
+        "name": "Lisbon",
+        "latitude": 38.7223,
+        "longitude": -9.1393
+      },
+      {
+        "name": "Porto",
+        "latitude": 41.1579,
+        "longitude": -8.6291
+      }
+    ]
+  }
+]
+  
+]
