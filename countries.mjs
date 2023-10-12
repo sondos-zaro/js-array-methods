@@ -35,29 +35,23 @@ function sortArray(type) {
     return sortedCountries;
 }
 
-function addAtFirst(newCountry
-    ) {
+function addAtFirst(newCountry) {
     let newId;
-    let isExist = arrayOfCountries.find((country) => country.name === newCountry
-    .name);
+    let isExist = arrayOfCountries.find((country) => country.name === newCountry.name);
 
-    
     if (isExist) {
         console.log("This country is already exist");
 
         return;
     }
     newId = generateId();
-    newCountry
-    .id = newId;
-    arrayOfCountries.unshift(newCountry
-        );
+    newCountry.id = newId;
+    arrayOfCountries.unshift(newCountry);
 }
 
 function addAtEnd(newCountry) {
     let newId;
     let isExist = arrayOfCountries.find((country) => country.name === newCountry.name);
-
     
     if (isExist) {
         console.log("This country is already exist");
@@ -65,10 +59,8 @@ function addAtEnd(newCountry) {
         return;
     }
     newId = generateId();
-    newCountry
-    .id = newId;
-    arrayOfCountries.push(newCountry
-        );
+    newCountry.id = newId;
+    arrayOfCountries.push(newCountry);
 }
 
 function removeFromFirst() {
@@ -80,21 +72,23 @@ function removeFromEnd() {
 }
 
 function removeCountry(countryName) {
+    let index ;
+
     if (typeof countryName !== 'string') {
         return;
     }
-    let index = arrayOfCountries.findIndex( (country) => country.name.toLowerCase() === countryName.toLowerCase());
-
+    index = arrayOfCountries.findIndex( (country) => country.name.toLowerCase() === countryName.toLowerCase());
     arrayOfCountries.splice(index,1);
 }
 
 
 function searchForCountry(countryName) {
+    let country;
+    
     if (typeof countryName !== 'string') {
         return;
     }
-
-    let country = arrayOfCountries.find((country) => country.name.toLowerCase() == countryName.toLowerCase());   
+    country = arrayOfCountries.find((country) => country.name.toLowerCase() == countryName.toLowerCase());   
 
     if(country) {
         return country;
@@ -117,7 +111,7 @@ function ifExist(countryName) {
         return;
     }
     
-    return arrayOfCountries.map(country => country.name).includes(countryName);
+    return arrayOfCountries.map(country => country.name.toLowerCase()).includes(countryName.toLowerCase());
 }
 
 function getArraySize(countries) {
@@ -167,18 +161,34 @@ function getCountryCities(countryName) {
 function getCountryForCity(cityName) {
     let index =arrayOfCountries.findIndex( (country) => {
     return country.cities.includes(cityName)
-    })
-    
+    });
+
     if (index !== -1) {
         return arrayOfCountries[index].name;
     } else {
-        return "this city doesn't exist"
+        return "this city doesn't exist";
     }
 }
 
 function addCity(countryName, cityName) {
     let index = indexOfCountry(countryName);
+
     arrayOfCountries[index].cities.push(cityName);
 }
 
-console.log(getCountryForCity("sds"));
+function deleteCity(cityName) {
+    let indexOfCity;
+    let indexOfCountry =arrayOfCountries.findIndex( (country) => {
+        return country.cities.includes(cityName);
+        });
+    
+        if (indexOfCountry !== -1) {
+            indexOfCity = arrayOfCountries[indexOfCountry].cities.findIndex( (city) => {
+            return city.includes(cityName) ;
+            });
+
+            arrayOfCountries[indexOfCountry].cities.splice(indexOfCity,1);
+        } else {
+            return "this city doesn't exist";
+        }    
+}
