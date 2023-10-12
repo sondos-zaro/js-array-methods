@@ -117,9 +117,8 @@ function ifExist(countryName) {
     if (typeof countryName !== 'string') {
         return;
     }
-    const loweCaseArray = arrayOfCountries.map((country) => country.toLowerCase());
-
-    return loweCaseArray.includes(countryName.toLowerCase());
+    
+    return arrayOfCountries.map(country => country.name).includes(countryName);
 }
 
 function getArraySize(countries) {
@@ -146,4 +145,3 @@ function concatArrays(...arrays) {
    return concatArray;
 }
 
-console.log(searchForCountry("dsd"));
