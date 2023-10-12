@@ -1,5 +1,16 @@
 import { arrayOfCountries } from './countryList.mjs';
 
+function generateId(){
+    let ids;
+    let newId;
+
+    ids = arrayOfCountries.map(country => {
+        return country.id;
+      })
+    newId = Math.max(...ids);
+    return newId+1; 
+}
+
 function sortArray(type) {
     let sortedCountries ;
     let name1;
@@ -25,16 +36,19 @@ function sortArray(type) {
     return sortedCountries;
 }
 
-function searchForCountry(countryName) {
-    if (typeof countryName !== 'string') {
+function addAtFirst(newcountry) {
+    let newId;
+    let isExist = arrayOfCountries.find((country) => country.name === newcountry.name);
+
+    
+    if (isExist) {
+        console.log("This country is already exist");
+
         return;
     }
-
-    return arrayOfCountries.find((country) => country.toLowerCase() == countryName.toLowerCase());   
-}
-
-function addAtFirst(country) {
-    arrayOfCountries.unshift(country);
+    newId = generateId();
+    newcountry.id = newId;
+    arrayOfCountries.unshift(newcountry);
 }
 
 function addAtEnd(country) {
@@ -56,6 +70,16 @@ function removeCountry(countryName) {
 
     return   arrayOfCountries.filter((country) => country.toLowerCase() !== countryName.toLowerCase());
 }
+
+
+function searchForCountry(countryName) {
+    if (typeof countryName !== 'string') {
+        return;
+    }
+
+    return arrayOfCountries.find((country) => country.toLowerCase() == countryName.toLowerCase());   
+}
+
 
 function indexOfCountry(countryName) {
     const lowerCaseArray = arrayOfCountries.map((country) => country.toLowerCase());
@@ -105,6 +129,3 @@ function concatArrays(...arrays) {
    return concatArray;
 }
 
-
-
-console.log(sortArray("D"));
