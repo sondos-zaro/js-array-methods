@@ -35,9 +35,11 @@ function sortArray(type) {
     return sortedCountries;
 }
 
-function addAtFirst(newcountry) {
+function addAtFirst(newCountry
+    ) {
     let newId;
-    let isExist = arrayOfCountries.find((country) => country.name === newcountry.name);
+    let isExist = arrayOfCountries.find((country) => country.name === newCountry
+    .name);
 
     
     if (isExist) {
@@ -46,13 +48,17 @@ function addAtFirst(newcountry) {
         return;
     }
     newId = generateId();
-    newcountry.id = newId;
-    arrayOfCountries.unshift(newcountry);
+    newCountry
+    .id = newId;
+    arrayOfCountries.unshift(newCountry
+        );
 }
 
-function addAtEnd(newcountry) {
+function addAtEnd(newCountry
+    ) {
     let newId;
-    let isExist = arrayOfCountries.find((country) => country.name === newcountry.name);
+    let isExist = arrayOfCountries.find((country) => country.name === newCountry
+    .name);
 
     
     if (isExist) {
@@ -61,8 +67,10 @@ function addAtEnd(newcountry) {
         return;
     }
     newId = generateId();
-    newcountry.id = newId;
-    arrayOfCountries.push(newcountry);
+    newCountry
+    .id = newId;
+    arrayOfCountries.push(newCountry
+        );
 }
 
 function removeFromFirst() {
@@ -99,19 +107,8 @@ function searchForCountry(countryName) {
 
 
 function indexOfCountry(countryName) {
-    const lowerCaseArray = arrayOfCountries.map((country) => country.toLowerCase());
-
-    return lowerCaseArray.indexOf(countryName.toLowerCase());
+    return arrayOfCountries.findIndex( (country) => country.name.toLowerCase() === countryName.toLowerCase());
 }
-
-function searchForCountries(countryName) {
-    if (typeof countryName !== 'string') {
-        return;
-    }
-
-    return  arrayOfCountries.filter(country=> country.toLowerCase().includes(countryName.toLowerCase()));
-}
-
 
 function ifExist(countryName) {
     if (typeof countryName !== 'string') {
@@ -145,3 +142,11 @@ function concatArrays(...arrays) {
    return concatArray;
 }
 
+function editCountry(countryName, newCountry) {
+    let index = indexOfCountry(countryName);
+    if (index == -1) {
+        return "this country doesn't exist";
+    } else {
+        arrayOfCountries[index]=newCountry;
+    }
+}
