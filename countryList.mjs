@@ -607,4 +607,3 @@ export let arrayOfCountries = [
   }
 ]
   
-]
