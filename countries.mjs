@@ -54,11 +54,9 @@ function addAtFirst(newCountry
         );
 }
 
-function addAtEnd(newCountry
-    ) {
+function addAtEnd(newCountry) {
     let newId;
-    let isExist = arrayOfCountries.find((country) => country.name === newCountry
-    .name);
+    let isExist = arrayOfCountries.find((country) => country.name === newCountry.name);
 
     
     if (isExist) {
@@ -164,5 +162,17 @@ function getCountryCities(countryName) {
     } else {
         return arrayOfCountries[index].cities;
     }
+}
+
+function getCountryForCity(cityName) {
+    let index =arrayOfCountries.findIndex( (country) => {
+    return country.cities.includes(cityName)
+    })
+    return arrayOfCountries[index].name;
+}
+
+function addCity(countryName, cityName) {
+    let index = indexOfCountry(countryName);
+    arrayOfCountries[index].cities.push(cityName);
 }
 
