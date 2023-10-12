@@ -1,14 +1,13 @@
 import { arrayOfCountries } from './countryList.mjs';
 
-function generateId(){
+function generateId() {
     let ids;
-    let newId;
 
     ids = arrayOfCountries.map(country => {
         return country.id;
       })
-    newId = Math.max(...ids);
-    return newId+1; 
+
+    return  Math.max(...ids)+1; 
 }
 
 function sortArray(type) {
@@ -78,8 +77,9 @@ function removeCountry(countryName) {
     if (typeof countryName !== 'string') {
         return;
     }
-
-    return   arrayOfCountries.filter((country) => country.toLowerCase() !== countryName.toLowerCase());
+    let index = arrayOfCountries.findIndex( (country) => country.name.toLowerCase() === countryName.toLowerCase());
+    
+    arrayOfCountries.splice(index,1);
 }
 
 
