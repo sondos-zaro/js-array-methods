@@ -51,8 +51,19 @@ function addAtFirst(newcountry) {
     arrayOfCountries.unshift(newcountry);
 }
 
-function addAtEnd(country) {
-    arrayOfCountries.push(country);
+function addAtEnd(newcountry) {
+    let newId;
+    let isExist = arrayOfCountries.find((country) => country.name === newcountry.name);
+
+    
+    if (isExist) {
+        console.log("This country is already exist");
+
+        return;
+    }
+    newId = generateId();
+    newcountry.id = newId;
+    arrayOfCountries.push(newcountry);
 }
 
 function removeFromFirst() {
@@ -128,4 +139,3 @@ function concatArrays(...arrays) {
 
    return concatArray;
 }
-
