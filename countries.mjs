@@ -168,7 +168,12 @@ function getCountryForCity(cityName) {
     let index =arrayOfCountries.findIndex( (country) => {
     return country.cities.includes(cityName)
     })
-    return arrayOfCountries[index].name;
+    
+    if (index !== -1) {
+        return arrayOfCountries[index].name;
+    } else {
+        return "this city doesn't exist"
+    }
 }
 
 function addCity(countryName, cityName) {
@@ -176,3 +181,4 @@ function addCity(countryName, cityName) {
     arrayOfCountries[index].cities.push(cityName);
 }
 
+console.log(getCountryForCity("sds"));
