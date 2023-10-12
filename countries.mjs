@@ -78,7 +78,7 @@ function removeCountry(countryName) {
         return;
     }
     let index = arrayOfCountries.findIndex( (country) => country.name.toLowerCase() === countryName.toLowerCase());
-    
+
     arrayOfCountries.splice(index,1);
 }
 
@@ -88,7 +88,13 @@ function searchForCountry(countryName) {
         return;
     }
 
-    return arrayOfCountries.find((country) => country.toLowerCase() == countryName.toLowerCase());   
+    let country = arrayOfCountries.find((country) => country.name.toLowerCase() == countryName.toLowerCase());   
+
+    if(country) {
+        return country;
+    } else {
+        return "This country doesn't exist";
+    }
 }
 
 
@@ -139,3 +145,5 @@ function concatArrays(...arrays) {
 
    return concatArray;
 }
+
+console.log(searchForCountry("dsd"));
