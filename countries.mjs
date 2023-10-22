@@ -2,67 +2,82 @@ import { arrayOfCountries } from './countryList.mjs';
 
 // Generate new Id 
 function generateId() {
-    let ids;
+    const ids = arrayOfCountries.map(country => country.id);
 
-    ids = arrayOfCountries.map(country => {
-        return country.id;
-      })
-
-    return  Math.max(...ids)+1; 
+    return  Math.max(...ids) + 1; 
 }
 
-// Sorted Array according to type (ascending, descending)
-function sortArray(type) {
-    let sortedCountries ;
-    let name1;
-    let name2;
+// Sorted Array in ascending oreder
+function ascendingSort(){
+    let prevName;
+    let currentName;
+    const ascendingArr = arrayOfCountries.sort((prevObject, currentObject) => {
+        prevName = prevObject.name.toUpperCase();
+        currentName = currentObject.name.toUpperCase();
 
-    if (typeof type !== 'string') {
+        return (prevName > currentName) ? 1 : (prevName < currentName) ? -1 : 0;
+    });
+
+    return ascendingArr;
+}
+
+// Sorted Array in descending oreder
+function descendingSort(type) {
+    let prevName;
+    let currentName;
+    const descendingArr = arrayOfCountries.sort((prevObject, currentObject) => {
+        prevName = prevObject.name.toUpperCase();
+        currentName = currentObject.name.toUpperCase();
+
+        return (prevName < currentName) ? 1 : (prevName > currentName) ? -1 : 0;    
+    });
+
+    return descendingArr;
+}
+
+// Return if the country exist or not
+function ifExist(countryName) {
+    if (typeof countryName !== 'string') {
+        return;
+    }
+    const ifExist = arrayOfCountries.find(country => country.name.toLowerCase() === countryName.toLowerCase());
+
+    return ifExist !== undefined ? true : false;
+}
+
+// Return index of specific country
+function indexOfCountry(countryName) {
+    if (typeof countryName !== 'string') {
         return;
     }
 
-    type = type.toUpperCase();
-    sortedCountries = arrayOfCountries.sort((object1, object2) => {
-        name1 = object1.name.toUpperCase();
-        name2 = object2.name.toUpperCase();
-
-        if (type == "D") {
-            return (name1 < name2) ? 1 : (name1 > name2) ? -1 : 0;    
-        } else {
-            return (name1 > name2) ? 1 : (name1 < name2) ? -1 : 0; 
-        }
-        
-    })
-    
-    return sortedCountries;
+    return arrayOfCountries.findIndex((country) => country.name.toLowerCase() === countryName.toLowerCase());
 }
 
 // Add new counrty at the first of array of objects
 function addAtFirst(newCountry) {
-    let newId;
-    let isExist = arrayOfCountries.find((country) => country.name === newCountry.name);
+    const isExist = ifExist(newCountry);
 
     if (isExist) {
         console.log("This country is already exist");
 
         return;
     }
-    newId = generateId();
+    const newId = generateId();
     newCountry.id = newId;
     arrayOfCountries.unshift(newCountry);
 }
 
 // Add new counrty at the end of array of objects
 function addAtEnd(newCountry) {
-    let newId;
-    let isExist = arrayOfCountries.find((country) => country.name === newCountry.name);
+    const isExist = ifExist(newCountry);
     
     if (isExist) {
         console.log("This country is already exist");
 
         return;
     }
-    newId = generateId();
+    const newId = generateId();
     newCountry.id = newId;
     arrayOfCountries.push(newCountry);
 }
@@ -79,47 +94,26 @@ function removeFromEnd() {
 
 // Remove  a specific counrty 
 function removeCountry(countryName) {
-    let index ;
-
     if (typeof countryName !== 'string') {
         return;
     }
-    index = arrayOfCountries.findIndex( (country) => country.name.toLowerCase() === countryName.toLowerCase());
-    arrayOfCountries.splice(index,1);
+    const index = indexOfCountry(countryName);
+
+    if (index === -1) {
+        console.log("this country doesn't exists")
+    } else {
+        arrayOfCountries.splice(index, 1);
+    }
 }
 
 // Search for specific counrty
 function searchForCountry(countryName) {
-    let country;
-
     if (typeof countryName !== 'string') {
         return;
     }
-    country = arrayOfCountries.find((country) => country.name.toLowerCase() == countryName.toLowerCase());   
+    const country = arrayOfCountries.find((country) => country.name.toLowerCase() == countryName.toLowerCase());   
 
-    if(country) {
-        return country;
-    } else {
-        return "This country doesn't exist";
-    }
-}
-
-// Return index of specific country
-function indexOfCountry(countryName) {
-    if (typeof countryName !== 'string') {
-        return;
-    }
-
-    return arrayOfCountries.findIndex( (country) => country.name.toLowerCase() === countryName.toLowerCase());
-}
-
-// Return if the country exist or not
-function ifExist(countryName) {
-    if (typeof countryName !== 'string') {
-        return;
-    }
-    
-    return arrayOfCountries.map(country => country.name.toLowerCase()).includes(countryName.toLowerCase());
+    return country ? country : "This country doesn't exist";
 }
 
 // Return size for an array
@@ -132,7 +126,7 @@ function arrayToChunks(chunkSize) {
     let chunks = [];
     let chunk;
 
-    for (let i = 0; i < arrayOfCountries.length; i += chunkSize) {
+    for (let i = 0;i < arrayOfCountries.length; i += chunkSize) {
         chunk = arrayOfCountries.slice(i, i + chunkSize);
         chunks.push(chunk);
     }
@@ -152,20 +146,20 @@ function concatArrays(...arrays) {
 
 // Update specific country
 function updateCountry(countryName, newCountry) {
-    let index = indexOfCountry(countryName);
+    const index = indexOfCountry(countryName);
 
-    if (index == -1) {
+    if (index === -1) {
         return "this country doesn't exist";
     } else {
-        arrayOfCountries[index]=newCountry;
+        arrayOfCountries[index] = newCountry;
     }
 }
 
 // Get all cities for counbtry
 function getCountryCities(countryName) {
-    let index = indexOfCountry(countryName);
+    const index = indexOfCountry(countryName);
 
-    if (index == -1) {
+    if (index === -1) {
         return "this country doesn't exist";
     } else {
         return arrayOfCountries[index].cities.map(city => city.name);
@@ -174,7 +168,7 @@ function getCountryCities(countryName) {
 
 // Get country for specific city
 function getCountryForCity(cityName) {
-    let index =arrayOfCountries.findIndex( (country) => {
+    const index = arrayOfCountries.findIndex( (country) => {
     return country.cities.map(city => city.name.toLowerCase()).includes(cityName.toLowerCase());
     });
 
@@ -186,42 +180,44 @@ function getCountryForCity(cityName) {
 }
 
 // Add city for country
-function addCity(countryName, cityName) {
-    let index = indexOfCountry(countryName);
+function addCity(countryName, newCity) {
+    const index = indexOfCountry(countryName);
 
-    arrayOfCountries[index].cities.push(cityName);
+    if (index !== -1) {
+        arrayOfCountries[index].cities.push(newCity);
+    } else {
+        return "this country doesn't exist";
+    }
 }
 
 // Delete city from country
 function deleteCity(cityName) {
-    let indexOfCity;
-    let indexOfCountry =arrayOfCountries.findIndex( (country) => {
+    const indexOfCountry = arrayOfCountries.findIndex((country) => {
         return country.cities.map(city => city.name.toLowerCase()).includes(cityName.toLowerCase());
+    });
+
+    if (indexOfCountry !== -1) {
+        const indexOfCity = arrayOfCountries[indexOfCountry].cities.findIndex( (city) => {
+            return city.name.toLowerCase() === cityName.toLowerCase();
         });
-    
-        if (indexOfCountry !== -1) {
-            indexOfCity = arrayOfCountries[indexOfCountry].cities.findIndex( (city) => {
-                return city.name.toLowerCase() === cityName.toLowerCase();
-            });
-            arrayOfCountries[indexOfCountry].cities.splice(indexOfCity,1);
-        } else {
-            return "this city doesn't exist";
-        }    
+        arrayOfCountries[indexOfCountry].cities.splice(indexOfCity, 1);
+    } else {
+        return "this city doesn't exist";
+    }    
 }
 
 // Update city 
 function updatecity(cityName, newCity) {
-    let indexOfCity;
-    let indexOfCountry =arrayOfCountries.findIndex( (country) => {
+    const indexOfCountry = arrayOfCountries.findIndex( (country) => {
         return country.cities.map(city => city.name.toLowerCase()).includes(cityName.toLowerCase());
+    });
+
+    if (indexOfCountry !== -1) {
+        const indexOfCity = arrayOfCountries[indexOfCountry].cities.findIndex( (city) => {
+            return city.name.toLowerCase() === cityName.toLowerCase();
         });
-    
-        if (indexOfCountry !== -1) {
-            indexOfCity = arrayOfCountries[indexOfCountry].cities.findIndex( (city) => {
-                return city.name.toLowerCase() === cityName.toLowerCase();
-            });
-            arrayOfCountries[indexOfCountry].cities[indexOfCity]=newCity;
-        } else {
-            return "this city doesn't exist";
-        }     
+        arrayOfCountries[indexOfCountry].cities[indexOfCity].name = newCity;
+    } else {
+        return "this city doesn't exist";
+    }     
 }
